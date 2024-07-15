@@ -25,7 +25,7 @@ const searchMovie = (e) =>{
         {/* Logo Container */}
         <ul>
             <li>
-            <Link className='nav-link' href="/">Stream Eazy</Link>
+            <Link className='nav-link' href="/">StreamEazy</Link>
             </li>
         </ul>
 
