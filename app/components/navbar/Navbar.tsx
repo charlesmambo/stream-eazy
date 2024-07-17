@@ -1,14 +1,20 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 
-const Navbar = ({ setShowAllContent, setShowSearchMovie, setIsInputFocused }) => {
+interface NavbarProps {
+    setShowAllContent: Dispatch<SetStateAction<boolean>>;
+    setShowSearchMovie: Dispatch<SetStateAction<boolean>>;
+    setIsInputFocused: Dispatch<SetStateAction<boolean>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setShowAllContent, setShowSearchMovie, setIsInputFocused }) => {
     const [input, setInput] = useState("");
     const router = useRouter();
 
     // Search Movie Function
-    const searchMovie = (e) => {
+    const searchMovie = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!input.trim()) return; // Check if input is empty or just whitespace
         router.push(`?movie=${input}`);

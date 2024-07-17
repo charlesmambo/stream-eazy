@@ -131,8 +131,8 @@ const AllContent: React.FC = () => {
                                 <p>Release: <span className='abt-movie-text'>{movie.release_date}</span></p>
                                 <p>Runtime: <span className='abt-movie-text'>{movie.runtime}</span> Min</p>
                                 <div className="ratings">
-                                    <p>Ratings: <span className='abt-movie-text'>{movie.vote_average}</span></p>
-                                    {renderStars(movie.vote_average)}
+                                    <p>Ratings: <span className='abt-movie-text'>{Number(movie.vote_average)}</span></p>
+                                    {renderStars(Number(movie.vote_average))}
                                 </div>
                             </div>
 
